@@ -14,6 +14,7 @@
     <span class="speed-value">0</span>
     <span class="units">KM/H</span>
   </h1>
+  <h2 class="counter">1</h2>
 
   <style>
     html {
@@ -63,9 +64,10 @@
   <script>
     let arrow = document.querySelector('.arrow')
     let speed = document.querySelector('.speed-value')
-
+    let counter = document.querySelector('.counter')
       navigator.geolocation.watchPosition((data) => {
         console.log(data)
+        counter.innerHTML = data
         if(!data.speed) return
         arrow.style.transform = `rotate(${data.heading}deg)`
         speed.innerHTML = data.speed
