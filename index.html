@@ -66,9 +66,9 @@
     let i = 0
 
       navigator.geolocation.watchPosition((data) => {
-        console.log(i)
+        console.log(data)
+        arrow.style.transform = `rotate(${i}deg)`
         i++
-        arrow.style.transform = `rotate(${data.heading}deg)`
         speed.innerHTML = data.speed
       })
 
