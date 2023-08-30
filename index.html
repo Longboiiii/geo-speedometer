@@ -66,7 +66,7 @@
     let speed = document.querySelector('.speed-value')
     let counter = document.querySelector('.counter')
     let i = 0
-      navigator.geolocation.watchPosition((data) => {
+      navigator.geolocation.(watchPosition||getcurrentposition)((data) => {
         console.log(data)
         counter.innerHTML = i
         i++
