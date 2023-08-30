@@ -67,8 +67,8 @@
     let counter = document.querySelector('.counter')
       navigator.geolocation.watchPosition((data) => {
         console.log(data)
-        counter.innerHTML = data
-        if(!data.speed) return
+        counter.innerHTML = data.speed + ' ' + data.heading
+         if(!data.speed) return
         arrow.style.transform = `rotate(${data.heading}deg)`
         speed.innerHTML = data.speed
         
